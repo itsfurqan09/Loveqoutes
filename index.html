@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fatima ❤️</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Scheherazade+New&display=swap');
+    body {
+      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+      font-family: 'Scheherazade New', serif;
+      color: #fff;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    h1 {
+      font-size: 3.5rem;
+      margin: 0;
+      animation: glow 2s infinite alternate;
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #ff6ea6, 0 0 30px #ff6ea6;
+      }
+      to {
+        text-shadow: 0 0 20px #fff, 0 0 30px #ff3c8e, 0 0 40px #ff3c8e;
+      }
+    }
+
+    #shayari {
+      font-size: 1.6rem;
+      margin-top: 20px;
+      max-width: 600px;
+      line-height: 2;
+      animation: fadeIn 2s ease-in;
+      transition: opacity 1s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    iframe {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 120px;
+      border: none;
+      z-index: 1000;
+      background: transparent;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Meri Jaan Fatima 💖</h1>
+
+  <p id="shayari">Tumhari muskurahat meri duniya hai, aur tum mere dil ki dhadkan ho.</p>
+
+  <!-- Embedded SoundCloud player for Talwiinder - Tu -->
+  <iframe 
+    scrolling="no" 
+    allow="autoplay"
+    src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1467698571&color=%23ff6699&auto_play=true&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false">
+  </iframe>
+
+  <script>
+    const shayariList = [
+      "Tumhari muskurahat meri duniya hai, aur tum mere dil ki dhadkan ho.",
+      "Har din tumhare bina adhoora lagta hai.",
+      "Tum meri dua ho, meri mohabbat ho, meri zindagi ho.",
+      "Tum ho to har lamha mehka lagta hai.",
+      "Teri baaton mein kuch to baat hai, dil har baar phisal jaata hai."
+    ];
+
+    let current = 0;
+    const shayariEl = document.getElementById("shayari");
+
+    setInterval(() => {
+      current = (current + 1) % shayariList.length;
+      shayariEl.style.opacity = 0;
+      setTimeout(() => {
+        shayariEl.innerText = shayariList[current];
+        shayariEl.style.opacity = 1;
+      }, 500);
+    }, 4000);
+  </script>
+
+</body>
+</html>
